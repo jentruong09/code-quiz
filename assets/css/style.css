@@ -1,9 +1,11 @@
+/* Styling for the whole page */
 body {
     background-color: black;
     color: white;
     font-family: 'Courier New', Courier, monospace;
 }
 
+/* Styling for the header image, making it sit in center */
 header .header-image {
     max-width: 1000px;
     display: block;
@@ -11,6 +13,24 @@ header .header-image {
     margin-right: auto;
 }
 
+/* Styling for the two sentences explaining the quiz and how much time */
 .card-body {
     text-align: center;
+    font-size: 17px;
+}
+
+/* Bolding and changing the color of the words '60 seconds' */
+.card-body .color {
+    color: darkseagreen;
+    font-weight: bold;
+}
+
+/* Styling for the button */
+.card-footer .button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 70px;
 }
