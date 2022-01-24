@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header .header-image {
+    max-width: 1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-body {
+    text-align: center;
+}
