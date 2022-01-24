@@ -1,3 +1,8 @@
+:root {
+    --accent: darkseagreen;
+
+}
+
 /* Styling for the whole page */
 body {
     background-color: black;
@@ -5,8 +10,21 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* Styling for the header image, making it sit in center */
-header .header-image {
+/* Styling for the header with highscore and time */
+header .highscores {
+    text-align: left;
+}
+
+header .timer {
+    text-align: right;
+}
+
+header .highscores:hover {
+    color: var(--accent);
+}
+
+/* Styling for the body image, making it sit in center */
+.card-header .header-image {
     max-width: 1000px;
     display: block;
     margin-left: auto;
@@ -21,7 +39,7 @@ header .header-image {
 
 /* Bolding and changing the color of the words '60 seconds' */
 .card-body .color {
-    color: darkseagreen;
+    color: var(--accent);
     font-weight: bold;
 }
 

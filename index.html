@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>code_quiz_challenge</title>
+    <title>code.quiz challenge</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
-       <img src="assets/images/code_quiz_challenge.jpg" class="header-image"/> 
+        <a class="highscores" href="index2.html">View Scoreboard</a>
+        <div class="timer">Timer: <span id="timer"> second(s) left</span></div>
     </header>
     <div class="card">
+
+        <div class="card-header">
+             <!-- code.quiz challenge image -->
+            <img src="assets/images/code_quiz_challenge.jpg" class="header-image"/>
+        </div>
+
         <div class="card-body">
         <p>
             Try to answer the following code-related questions within the <span class="color"> 60 seconds </span> time limit. 
@@ -20,6 +27,7 @@
             Keep in mind that an incorrect answer will penalize your time by ten seconds!
         </p>
         </div>
+
         <div class="card-footer">
             <button id="generate" class="button">Start Quiz</button>
         </div>
