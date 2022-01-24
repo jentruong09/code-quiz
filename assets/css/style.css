@@ -10,8 +10,8 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* Styling for the header with highscore and time */
-header .highscores {
+/* Styling for the header of the homepage with highscore and time */
+header .scoreboard {
     text-align: left;
 }
 
@@ -19,8 +19,14 @@ header .timer {
     text-align: right;
 }
 
-header .highscores:hover {
+header .scoreboard:hover {
     color: var(--accent);
+}
+
+/*Styling for the header of the scoreboard page */
+header .highscores {
+    text-align: center;
+    margin-top: 40px;
 }
 
 /* Styling for the body image, making it sit in center */
@@ -44,7 +50,7 @@ header .highscores:hover {
 }
 
 /* Styling for the button */
-.card-footer .button {
+.card-footer .start-button {
     display: block;
     margin-left: auto;
     margin-right: auto;

@@ -9,8 +9,8 @@
 </head>
 <body>
     <header>
-        <a class="highscores" href="index2.html">View Scoreboard</a>
-        <div class="timer">Timer: <span id="timer"> second(s) left</span></div>
+        <a class="scoreboard" href="index2.html">View Scoreboard</a>
+        <div class="timer">Timer: <span id="timer"> 60 </span> second(s) left</div>
     </header>
     <div class="card">
 
@@ -28,8 +28,16 @@
         </p>
         </div>
 
+        <div class="card-quiz">
+            <div class="question"></div>
+            <button class="answer-one" data-state="hidden"></button>
+            <button class="answer-two" data-state="hidden"></button>
+            <button class="answer-three" data-state="hidden"></button>
+            <button class="answer-four" data-state="hidden"></button>
+        </div>
+
         <div class="card-footer">
-            <button id="generate" class="button">Start Quiz</button>
+            <button id="generate-start" class="start-button">Start Quiz</button>
         </div>
     </div>
     <script src="assets/js/script.js"></script>
