@@ -49,6 +49,10 @@ header .highscores {
     font-weight: bold;
 }
 
+.cardbody .card-quiz {
+    
+}
+
 /* Styling for the button */
 .card-footer .start-button {
     display: block;
