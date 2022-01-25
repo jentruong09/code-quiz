@@ -11,7 +11,6 @@
     <header>
         <a class="scoreboard" href="index2.html">View Scoreboard</a>
         <div class="timer"><span id="time-left"></span> </div>
-        <div class="score"></div>
     </header>
     <div class="card">
 
@@ -30,7 +29,7 @@
         </div>
 
         <div class="card-quiz">
-            <div class="question-section"></div>
+            <div class="question-section" data-state="hidden"> </div>
             <button id="answers" class="answer-one" data-state="hidden"></button>
             <button id="answers" class="answer-two" data-state="hidden"></button>
             <button id="answers" class="answer-three" data-state="hidden"></button>
@@ -38,6 +37,14 @@
         </div>
 
         <div class="message-display"></div>
+        
+        <div class="card-final">
+            <div class="score"></div>
+            <form>
+                <div class="initials">Enter your intials: <input class="initials-input"></div>
+                <button class="submit-input">Submit</button>
+            </form>
+        </div>
 
         <div class="card-footer">
             <button id="generate-start" class="start-button">Start Quiz</button>

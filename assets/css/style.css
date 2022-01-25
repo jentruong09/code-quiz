@@ -54,8 +54,19 @@ header .highscores {
     font-weight: bold;
 }
 
-.cardbody .card-quiz {
+.card-quiz {
+    text-align: center;
+}
 
+#answers {
+    display: none;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-final {
+    display: none;
 }
 
 /* Styling for the button */
