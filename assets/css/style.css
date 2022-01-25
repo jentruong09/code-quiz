@@ -23,11 +23,16 @@ header .scoreboard:hover {
     color: var(--accent);
 }
 
+header .score {
+    text-align: right;
+}
+
 /*Styling for the header of the scoreboard page */
 header .highscores {
     text-align: center;
     margin-top: 40px;
 }
+
 
 /* Styling for the body image, making it sit in center */
 .card-header .header-image {
@@ -50,7 +55,7 @@ header .highscores {
 }
 
 .cardbody .card-quiz {
-    
+
 }
 
 /* Styling for the button */
