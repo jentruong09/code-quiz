@@ -23,7 +23,7 @@ header .scoreboard:hover {
     color: var(--accent);
 }
 
-header .score {
+header .card-score {
     text-align: right;
 }
 
@@ -36,7 +36,7 @@ header .highscores {
 
 /* Styling for the body image, making it sit in center */
 .card-header .header-image {
-    max-width: 1000px;
+    max-width: 800px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -67,6 +67,7 @@ header .highscores {
 
 .card-final {
     display: none;
+    text-align: center;
 }
 
 /* Styling for the button */

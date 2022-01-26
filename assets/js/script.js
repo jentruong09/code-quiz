@@ -1,19 +1,30 @@
 // Defining variables
-var startButton = document.querySelector(".start-button")
-var bodySection = document.querySelector(".card-body")
-var scoreLink = document.querySelector(".scoreboard") // Link to HTML2
-var scoreDisplay = document.querySelector(".score") // On HTML1
+var startButton = document.querySelector(".start-button");
+var bodySection = document.querySelector(".card-body");
+var scoreLink = document.querySelector(".scoreboard"); // Link to HTML2
+var scoreDisplay = document.querySelector(".score"); // On HTML1
 
-var timerStart = document.querySelector("#time-left")
+var scoreboard = document.querySelector(".card-scores"); // On HTML2 for Highscore Scoreboard
+var scoreList = document.querySelector("#score-list");
+var listOfHS = document.querySelector("#score-initials")
 
-var questionSection = document.querySelector(".question-section")
-var aChoice = document.querySelector(".answer-one")
-var bChoice = document.querySelector(".answer-two")
-var cChoice = document.querySelector(".answer-three")
-var dChoice = document.querySelector(".answer-four")
+var timerEl = document.querySelector(".timer");
+//var timer = document.querySelector("#time-left");
 
-var displayMessage = document.querySelector(".message-display")
+var questionSection = document.querySelector(".question-section");
+var aChoice = document.querySelector(".answer-one");
+var bChoice = document.querySelector(".answer-two");
+var cChoice = document.querySelector(".answer-three");
+var dChoice = document.querySelector(".answer-four");
+
+
+var submitInput = document.querySelector(".submit-input");
+var initialsInput = document.querySelector(".initials-input");
+var finalSummary = document.querySelector(".card-final");
+var displayMessage = document.querySelector(".message-display");
 var correctAnswers = 0;
+var timeLeft;
+var timeInterval;
 
 // Function to hide and show items
 function hide(element) {
@@ -51,26 +62,24 @@ var differentQuestions = [
         choices: ["a. JavaScript", "b. HTML", "c. CSS", "d. All of the above"],
         correct: "b. HTML",
     }
-
-
 ];
 
 console.log(differentQuestions.length)
 
-
+// All items that will hide or show once the start button is clicked
 function startNewQuiz() {
     hide(startButton);
     hide(bodySection)
-    show(timerStart);
+    show(timerEl);
     startQuiz();
     questionIndex = 0;
     show(aChoice);
     show(bChoice);
     show(cChoice);
     show(dChoice);
-
-
+    startTimer()
 }
+
 
 // Making the Start Quiz button do the same thing as the next quiz button - which will give a new question 
 function startQuiz() {
@@ -87,18 +96,44 @@ function nextQuestion() {
     dChoice.textContent = differentQuestions[questionIndex].choices[3];
 } 
 
+
+// Timer for the quiz
+function startTimer () {
+    var timeLeft = 60;
+    
+    var timeInterval = setInterval(function() {
+        timeLeft--;
+        if (timeLeft > 1) {
+        timerEl.textContent = timeLeft  + " seconds remaining";
+        } else if (timeLeft == 1) { 
+          timerEl.textContent = timeLeft  + " second remaining";
+          } else {
+            timerEl.textContent = ""
+            clearInterval(timeInterval);
+    }
+
+
+}, 1000);
+}
+
+
+function stopTimer() {
+    clearInterval(timeInterval)
+}
+
+
 // Checking to see if the user answered the question correctly or not
 function checkCorrectAnswer(correct) {
     if (differentQuestions[questionIndex].correct === differentQuestions[questionIndex].choices[correct]) {
         correctAnswers++;
         displayMessage.textContent = "Correct!"
-    } 
-    else {
-        //secondsLeft -= 10;
-        //timerStart.textContent = secondsLeft;
-        displayMessage.textContent = "Wrong!"
     }
-    
+    else {
+        displayMessage.textContent = "Wrong!"
+        timeLeft -= 10;
+        timerEl.textContent = timeLeft + " seconds remaining";
+    };
+
     questionIndex++;
     if (questionIndex < differentQuestions.length) {
         startQuiz();
@@ -120,16 +155,64 @@ function gameOver() {
     hide(cChoice)
     hide(dChoice)
     hide(displayMessage)
+    hide(timerEl)
+    stopTimer()
 
     // Display score
-    scoreDisplay.textContent = "Your final score is: " + correctAnswers *20 + "!";
+    scoreDisplay.textContent = correctAnswers *20;
 
+    show(finalSummary)
 }
 
 
 
+//function renderScores() {
+   // scoreList.innerHTML = "";
+
+   // for (var i=0; i < scores.length; i++) {
+      //  var scores = scores [i];
+
+       // var li =document.createElement("li")
+       // li.textContent = scores;
+        
+  //  }
 
 
+//}
+
+//function getHighscores() {
+   // var storedHighscores = JSON.parse(localStorage.getItem("quizScores"));
+
+  //  scoreboard = storedHighscores
+
+   // renderScores();
+//}
+
+
+function getHighscores() {
+    var highscores = JSON.parse(localStorage.getItem("quizScores"))
+
+    listOfHS.innerHtML =
+    highscores.initials + "-" + highscores.score;
+}
+
+
+submitInput.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // if (initialsInput.value === " ") {
+      //  alert("You haven't entered your initials, please try again!")
+       // return;
+   // }
+
+    var quizScores = {
+        initials: initialsInput.value,
+        score: scoreDisplay.textContent
+    }
+
+    localStorage.setItem("quizScores", JSON.stringify(quizScores));
+
+});
 
 
 
