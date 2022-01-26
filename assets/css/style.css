@@ -17,22 +17,30 @@ header .scoreboard {
 
 header .timer {
     text-align: right;
-}
-
-header .scoreboard:hover {
+    font-weight: bold;
     color: var(--accent);
 }
+
+/* Styling for the scoreboard link */
+header .scoreboard:hover {
+    background-color: var(--accent);
+}
+
+header .scoreboard:link {
+    text-decoration: none;
+    
+}
+
+header .scoreboard:visited {
+    text-decoration: none;
+    color: white;
+
+}
+
 
 header .card-score {
     text-align: right;
 }
-
-/*Styling for the header of the scoreboard page */
-header .highscores {
-    text-align: center;
-    margin-top: 40px;
-}
-
 
 /* Styling for the body image, making it sit in center */
 .card-header .header-image {
@@ -54,21 +62,45 @@ header .highscores {
     font-weight: bold;
 }
 
+
+/* Styling for quiz when it populates */
 .card-quiz {
     text-align: center;
+    
+}
+
+.card-quiz .question-section {
+    margin: 9px;
 }
 
 #answers {
     display: none;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 12px auto 12px auto;
 }
 
+/* Styling for the final score page */
 .card-final {
     display: none;
     text-align: center;
 }
+
+.card-final .card-final-score {
+    margin: 15px;
+}
+
+.card-final .initials {
+    margin: 15px;
+}
+
+.card-final .submit-input {
+    margin: 15px;
+}
+
+.card-final .submit-input:hover {
+    background-color: var(--accent);
+}
+
 
 /* Styling for the button */
 .card-footer .start-button {
@@ -78,4 +110,51 @@ header .highscores {
     text-align: center;
     font-size: 18px;
     margin-top: 70px;
+}
+
+.card-footer .start-button:hover {
+    background-color: var(--accent);
+}
+
+
+/* Styling for index2.html */
+
+/* Styling for the header of the scoreboard page */
+header .highscores {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 50px;
+}
+
+/* Styling for the scores */
+.card-html2 .card-scores {
+    color: var(--accent);
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Styling for the buttons on the scoreboard page*/
+.card-html2 .card-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-html2 .card-buttons .go-back {
+    margin: 12px;
+    font-size: 15px;
+}
+
+.card-html2 .card-buttons .clear-scores{
+    margin: 12px;
+    font-size: 15px;
+}
+
+.card-html2 .card-buttons .go-back:hover {
+    background-color: var(--accent);
+}
+
+.card-html2 .card-buttons .clear-scores:hover {
+    background-color: var(--accent);
 }
