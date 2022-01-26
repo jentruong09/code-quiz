@@ -4,9 +4,7 @@ var bodySection = document.querySelector(".card-body");
 var scoreLink = document.querySelector(".scoreboard"); // Link to HTML2
 var scoreDisplay = document.querySelector(".score"); // On HTML1
 
-var scoreboard = document.querySelector(".card-scores"); // On HTML2 for Highscore Scoreboard
-var scoreList = document.querySelector("#score-list");
-//var listOfHS = document.querySelector("#score-initials")
+
 
 var timerEl = document.querySelector(".timer");
 //var timer = document.querySelector("#time-left");
@@ -17,14 +15,14 @@ var bChoice = document.querySelector(".answer-two");
 var cChoice = document.querySelector(".answer-three");
 var dChoice = document.querySelector(".answer-four");
 
-var clearHighscores = document.querySelector(".clear-scores")
+
 
 var submitInput = document.querySelector(".submit-input");
 var initialsInput = document.querySelector(".initials-input");
 var finalSummary = document.querySelector(".card-final");
 var displayMessage = document.querySelector(".message-display");
 var correctAnswers = 0;
-var timeLeft;
+var timeLeft = 60;
 var timeInterval;
 
 // Function to hide and show items
@@ -97,10 +95,8 @@ function nextQuestion() {
     dChoice.textContent = differentQuestions[questionIndex].choices[3];
 } 
 
-
 // Timer for the quiz
 function startTimer () {
-    var timeLeft = 60;
     
     var timeInterval = setInterval(function() {
         timeLeft--;
@@ -173,26 +169,24 @@ function highScoreStorage(event) {
     if (initialsInput.value === " ") {
       alert("You haven't entered your initials, please try again!")
       return;
-   }
+    }
+
+    //var quizScores = [];
+       // quizScores[0] = {
+          //  initials: initialsInput.value,
+           // score: scoreDisplay.textContent
+      //  }
 
     var quizScores = {
         initials: initialsInput.value,
-        score: scoreDisplay.textContent
+       score: scoreDisplay.textContent
     }
 
     localStorage.setItem("quizScores", JSON.stringify(quizScores));
 
 };
 
-function getHighscores() {
-    var highscores = JSON.parse(localStorage.getItem("quizScores"))
 
-    for ( i = 0; i < highscores.length; i++) {
-        var everyHighscore = document.createElement("p")
-        everyHighscore.innerHTML = highscores[i].initials + "-" + highscores[i].score;
-        scoreList.appendChild(everyHighscore);
-    }
-}
 
 
 startButton.addEventListener("click", startNewQuiz)
@@ -203,17 +197,13 @@ cChoice.addEventListener("click", answeredC)
 dChoice.addEventListener("click", answeredD)
 
 submitInput.addEventListener('click', function(event) {
-   //highScoreStorage(event);
+    highScoreStorage(event);
 });
 
 
-clearHighscores.addEventListener("click", function() {
 
-    window.localStorage.removeItem("quizScores")
 
-});
-
-// !!! If second HTML doesn't work out - try having one page and hiding the rest of of the items one the scoreboard button is clicked?
+// !!! If second HTML doesn't work out - try having one page and hiding the rest of of the items one the scoreboard button is clicked? - if trying this, duplicate this and work on the duplicated one!!
 
 // Error for scoreboard page - only way the error would go away was to comment out the addEventListeners
 
