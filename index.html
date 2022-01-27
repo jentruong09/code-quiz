@@ -18,7 +18,7 @@
              <!-- code.quiz challenge image -->
             <img src="assets/images/code_quiz_challenge.jpg" class="header-image"/>
         </div>
-
+            <!-- Rules for the quiz -->
         <div class="card-body">
         <p>
             Try to answer the following code-related questions within the <span class="color"> 60 seconds </span> time limit. 
@@ -27,7 +27,7 @@
             Keep in mind that an incorrect answer will penalize your time by ten seconds!
         </p>
         </div>
-
+            <!-- Area for where the questions will pop up, will stay hiddened until start button is clicked -->
         <div class="card-quiz">
             <div class="question-section" data-state="hidden"> </div>
             <button id="answers" class="answer-one" data-state="hidden"></button>
@@ -35,17 +35,19 @@
             <button id="answers" class="answer-three" data-state="hidden"></button>
             <button id="answers" class="answer-four" data-state="hidden"></button>
         </div>
-
+            <!-- Hidden message display that will show wrong or right when questions are answered -->
         <div class="message-display"></div>
         
+            <!-- Final screen for when game is over: either when the timer is up or when all questions are answered -->
         <div class="card-final">
+            <div class="gameover"> Game Over! </div>
             <div class="card-final-score"> Your final score is: <span class="score"></span>!</div>
             <form>
                 <div class="initials">Enter your intials: <input class="initials-input"></div>
                 <button class="submit-input">Submit</button>
             </form>
         </div>
-
+            <!-- Start button -->
         <div class="card-footer">
             <button id="generate-start" class="start-button">Start Quiz</button>
         </div>

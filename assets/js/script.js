@@ -4,18 +4,13 @@ var bodySection = document.querySelector(".card-body");
 var scoreLink = document.querySelector(".scoreboard"); // Link to HTML2
 var scoreDisplay = document.querySelector(".score"); // On HTML1
 
-
-
 var timerEl = document.querySelector(".timer");
-//var timer = document.querySelector("#time-left");
 
 var questionSection = document.querySelector(".question-section");
 var aChoice = document.querySelector(".answer-one");
 var bChoice = document.querySelector(".answer-two");
 var cChoice = document.querySelector(".answer-three");
 var dChoice = document.querySelector(".answer-four");
-
-
 
 var submitInput = document.querySelector(".submit-input");
 var initialsInput = document.querySelector(".initials-input");
@@ -63,7 +58,7 @@ var differentQuestions = [
     }
 ];
 
-console.log(differentQuestions.length)
+//console.log(differentQuestions.length)
 
 // All items that will hide or show once the start button is clicked
 function startNewQuiz() {
@@ -86,6 +81,7 @@ function startQuiz() {
 }
 
 
+// How the questions show up one after another
 var questionIndex = 0;
 function nextQuestion() {
     questionSection.textContent = differentQuestions[questionIndex].question;
@@ -107,9 +103,8 @@ function startTimer () {
           } else {
             timerEl.textContent = ""
             clearInterval(timeInterval);
+            gameOver()
     }
-
-
 }, 1000);
 }
 
@@ -139,12 +134,14 @@ function checkCorrectAnswer(correct) {
     }
 }
 
+// Checking for the correct answer
 function answeredA() { checkCorrectAnswer(0)}
 function answeredB() { checkCorrectAnswer(1)}
 function answeredC() { checkCorrectAnswer(2)}
 function answeredD() { checkCorrectAnswer(3)}
 
 
+// Hiding and showing different items when the game is over
 function gameOver() {
     hide(questionSection)
     hide(aChoice)
@@ -161,7 +158,7 @@ function gameOver() {
     show(finalSummary)
 }
 
-
+// To store the highscores into the local storage
 function highScoreStorage(event) {
     event.preventDefault();
 
@@ -188,7 +185,7 @@ function highScoreStorage(event) {
 
 
 
-
+// What happens when any of the buttons are clicked 
 startButton.addEventListener("click", startNewQuiz)
 
 aChoice.addEventListener("click", answeredA)

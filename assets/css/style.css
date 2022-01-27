@@ -79,10 +79,20 @@ header .card-score {
     margin: 12px auto 12px auto;
 }
 
+#answers:hover{
+    background-color: var(--accent);
+}
+
 /* Styling for the final score page */
 .card-final {
     display: none;
     text-align: center;
+}
+
+.card-final .gameover{
+    color:var(--accent);
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .card-final .card-final-score {
@@ -158,3 +168,10 @@ header .highscores {
 .card-html2 .card-buttons .clear-scores:hover {
     background-color: var(--accent);
 }
+
+/* Media Query for the background picture */
+@media (max-width: 700px) {
+    .card-header .header-image {
+      max-width: 500px;
+    }
+  }
