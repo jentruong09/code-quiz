@@ -158,6 +158,35 @@ function gameOver() {
     show(finalSummary)
 }
 
+
+
+// // To store the highscores into the local storage
+// function highScoreStorage(event) {
+//     event.preventDefault();
+
+
+//     if (initialsInput.value === " ") {
+//       alert("You haven't entered your initials, please try again!")
+//       return;
+//     }
+
+//     //var quizScores = [];
+//        // quizScores[0] = {
+//           //  initials: initialsInput.value,
+//            // score: scoreDisplay.textContent
+//       //  }
+
+//     var quizScores = {
+//         initials: initialsInput.value,
+//        score: scoreDisplay.textContent
+//     }
+
+//     localStorage.setItem("quizScores", JSON.stringify(quizScores));
+
+// };
+
+var scoreArray = [];
+
 // To store the highscores into the local storage
 function highScoreStorage(event) {
     event.preventDefault();
@@ -168,19 +197,20 @@ function highScoreStorage(event) {
       return;
     }
 
-    //var quizScores = [];
-       // quizScores[0] = {
-          //  initials: initialsInput.value,
-           // score: scoreDisplay.textContent
-      //  }
-
     var quizScores = {
         initials: initialsInput.value,
-       score: scoreDisplay.textContent
+        score: scoreDisplay.textContent
     }
+    //    scoreArray = [
+    //        initialsInput.value + ":" + scoreDisplay.textContent
+    //    ]
+       scoreArray.push(quizScores)
 
-    localStorage.setItem("quizScores", JSON.stringify(quizScores));
+    
 
+    localStorage.setItem("quizScores", JSON.stringify(scoreArray));
+
+    window.location.assign(href="index2.html")
 };
 
 
