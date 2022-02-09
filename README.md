@@ -31,7 +31,7 @@ Test your knowledge on coding with this quiz challenge! Visit the highscore page
 
 Once you launch the application, you will see the following page launch:
 
-![start-page-pic](/assets/images/Start-pic.png)
+![start-page-pic](/assets/images/code-quiz.png)
 
 <br/>
 
