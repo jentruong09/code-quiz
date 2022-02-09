@@ -52,3 +52,5 @@ clearHighscores.addEventListener("click", function() {
     window.localStorage.removeItem("quizScores");
     hide(scoreList);
 });
+
+
